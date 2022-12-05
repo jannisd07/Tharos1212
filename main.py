@@ -34,4 +34,4 @@ async def load():
             await client.load_extension(f"cogs.{filename[:-3]}")
 load()
 
-client.run("ENTFERNT")
+client.run("REDACTED_DISCORD_TOKEN")
