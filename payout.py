@@ -1,9 +1,12 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 import paypalrestsdk
 from paypalrestsdk import Payout, ResourceNotFound
 paypalrestsdk.configure({
     "mode": "live", # sandbox or live
-    "client_id": "REDACTED_PAYPAL_CLIENT_ID",
-    "client_secret": "REDACTED_PAYPAL_SECRET"
+    "client_id": os.environ.get("PAYPAL_CLIENT_ID"),
+    "client_secret": os.environ.get("PAYPAL_CLIENT_SECRET")
 })
 
 payout = Payout({
